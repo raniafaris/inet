@@ -100,9 +100,9 @@ class INET_API Ipv4Header : public Ipv4Header_Base
 
 
     virtual L3Address getSourceAddress() const override { return L3Address(getSrcAddress()); }
-    virtual void setSourceAddress(const L3Address& address) override { setSrcAddress(address.toIPv4()); }
+    virtual void setSourceAddress(const L3Address& address) override { setSrcAddress(address.toIpv4()); }
     virtual L3Address getDestinationAddress() const override { return L3Address(getDestAddress()); }
-    virtual void setDestinationAddress(const L3Address& address) override { setDestAddress(address.toIPv4()); }
+    virtual void setDestinationAddress(const L3Address& address) override { setDestAddress(address.toIpv4()); }
     virtual const Protocol *getProtocol() const override { return ProtocolGroup::ipprotocol.findProtocol(getProtocolId()); }
     virtual void setProtocol(const Protocol *protocol) override { setProtocolId((IpProtocolId)ProtocolGroup::ipprotocol.getProtocolNumber(protocol)); }
 };
